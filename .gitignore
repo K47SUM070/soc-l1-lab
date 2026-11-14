@@ -1,0 +1,25 @@
+# Estado local y archivos privados
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*.log.*
+*.pid
+*.swp
+*.swo
+*~
+.DS_Store
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+.vercel/
+.wrangler/
+dist/
+build/

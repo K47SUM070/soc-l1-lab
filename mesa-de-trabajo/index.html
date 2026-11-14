@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOC L1 · Mesa de trabajo</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, -apple-system, sans-serif; background: #0b1220; color: #e5edf8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.55; }
+    header, main, footer { max-width: 1080px; margin: auto; padding: 1.5rem; }
+    header { padding-top: 3.5rem; }
+    .eyebrow { color: #8bdbca; font-size: .85rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; margin: .5rem 0; }
+    h2 { margin: 0 0 .8rem; font-size: 1.3rem; }
+    p { margin: .5rem 0 1rem; }
+    .intro { max-width: 65ch; color: #bdccdf; }
+    .notice { border-left: 4px solid #f8bf65; padding: .8rem 1rem; background: #2d2830; border-radius: .35rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .card { background: #162235; border: 1px solid #32465f; border-radius: .8rem; padding: 1.3rem; }
+    .card p, li { color: #c7d3e3; }
+    a { color: #9ee7d5; text-underline-offset: .2em; }
+    a:hover, a:focus { color: #fff; }
+    .button { display: inline-block; background: #1f7b70; color: #fff; text-decoration: none; border-radius: .4rem; padding: .65rem .85rem; font-weight: 700; margin: .25rem .5rem .25rem 0; }
+    .button:hover, .button:focus { background: #279889; }
+    ul { padding-left: 1.2rem; }
+    li { margin: .55rem 0; }
+    code { color: #fff; background: #26374c; padding: .1rem .3rem; border-radius: .25rem; }
+    footer { border-top: 1px solid #32465f; color: #a9bbcf; padding-bottom: 3rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Laboratorio local · SOC L1</div>
+    <h1>Mesa de trabajo</h1>
+    <p class="intro">Un espacio de consulta para practicar el análisis inicial de un incidente. Abrí el caso, revisá los registros y documentá tu evaluación.</p>
+    <p class="notice"><strong>Datos simulados.</strong> Los eventos, identidades y host del caso son ficticios. La IP utilizada está reservada para documentación.</p>
+  </header>
+  <main>
+    <section aria-labelledby="caso">
+      <h2 id="caso">Caso 001 · actividad SSH</h2>
+      <div class="grid">
+        <div class="card">
+          <h2>1. Abrí el ejercicio</h2>
+          <p>Leé las preguntas de investigación antes de examinar la evidencia.</p>
+          <a class="button" href="../casos/caso-001-ssh/instrucciones-consulta.html">Leer instrucciones</a>
+        </div>
+        <div class="card">
+          <h2>2. Consultá los registros</h2>
+          <p>El archivo de autenticación contiene los eventos simulados en orden cronológico.</p>
+          <a class="button" href="../casos/caso-001-ssh/evidencias/auth-consulta.html">Abrir auth.log</a>
+        </div>
+        <div class="card">
+          <h2>3. Documentá el análisis</h2>
+          <p>Consultá el ticket y completalo con un editor local. Esta página no guarda cambios.</p>
+          <a class="button" href="../casos/caso-001-ssh/ticket-consulta.html">Ver ticket</a>
+          <a href="../plantillas/ticket-incidente-consulta.html">Ver plantilla reutilizable</a>
+        </div>
+      </div>
+    </section>
+    <section class="card" aria-labelledby="recursos">
+      <h2 id="recursos">Repositorios de referencia</h2>
+      <p>Son recursos externos para explorar cuando termines el ejercicio; el caso se puede resolver sin ellos.</p>
+      <ul>
+        <li><a href="https://github.com/gchq/CyberChef" target="_blank" rel="noopener noreferrer">CyberChef</a> — operaciones de codificación, decodificación y análisis de datos en el navegador.</li>
+        <li><a href="https://github.com/SigmaHQ/sigma" target="_blank" rel="noopener noreferrer">SigmaHQ/sigma</a> — reglas genéricas de detección para registros.</li>
+        <li><a href="https://github.com/Yamato-Security/hayabusa" target="_blank" rel="noopener noreferrer">Yamato-Security/hayabusa</a> — análisis y cronologías de eventos de Windows.</li>
+        <li><a href="https://github.com/certsocietegenerale/IRM" target="_blank" rel="noopener noreferrer">certsocietegenerale/IRM</a> — metodologías de respuesta a incidentes.</li>
+        <li><a href="https://github.com/splunk/security_content" target="_blank" rel="noopener noreferrer">splunk/security_content</a> — contenido de detección e investigación para Splunk.</li>
+      </ul>
+    </section>
+  </main>
+  <footer>El HTML es de consulta. Editá <code>ticket.md</code> con un editor local.</footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# DATOS SIMULADOS — ejercicio SOC L1. Host, cuentas, PID y tiempos ficticios. IP TEST-NET-2 de documentación.
+Nov 14 09:14:02 srv-app-01 sshd[18041]: Failed password for invalid user admin from 198.51.100.23 port 50112 ssh2
+Nov 14 09:14:16 srv-app-01 sshd[18044]: Failed password for invalid user admin from 198.51.100.23 port 50118 ssh2
+Nov 14 09:15:03 srv-app-01 sshd[18053]: Failed password for ops from 198.51.100.23 port 50126 ssh2
+Nov 14 09:15:19 srv-app-01 sshd[18057]: Failed password for ops from 198.51.100.23 port 50132 ssh2
+Nov 14 09:16:01 srv-app-01 sshd[18062]: Failed password for deploy from 198.51.100.23 port 50146 ssh2
+Nov 14 09:17:44 srv-app-01 sshd[18080]: Accepted password for ops from 198.51.100.23 port 50204 ssh2
+Nov 14 09:17:44 srv-app-01 sshd[18080]: pam_unix(sshd:session): session opened for user ops(uid=1002) by (uid=0)
+Nov 14 09:19:07 srv-app-01 sudo: ops : TTY=pts/1 ; PWD=/home/ops ; USER=root ; COMMAND=/usr/bin/id
