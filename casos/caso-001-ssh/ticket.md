@@ -1,32 +1,76 @@
 # Ticket de incidente — caso 001 SSH
 
+Estado del ejercicio: análisis L1 completado; escalamiento a L2 propuesto (simulado).
+
 > Práctica con datos simulados. Completá este archivo en un editor local.
 
 ## Resumen
-
+En el host srv-app-01 se observaron cinco intentos fallidos de autenticación SSH desde la IP 198.51.100.23, dirigidos a las cuentas admin, ops y deploy. Posteriormente se registró una autenticación exitosa y la apertura de una sesión para ops desde la misma IP, seguida de una entrada de sudo para ejecutar /usr/bin/id como root. La secuencia requiere investigación para determinar si el acceso y la actividad fueron autorizados.
 
 ## Evidencias y hechos observados
+Fuente: evidencias/auth.log. Datos simulados del 14 de noviembre; el registro no especifica año ni zona horaria.
 
+- Host: srv-app-01.
+- IP de origen de los intentos SSH: 198.51.100.23.
+- Líneas 2–3: dos intentos fallidos contra admin, identificado como usuario inválido, a las 09:14:02 y 09:14:16.
+- Líneas 4–5: dos intentos fallidos contra ops, a las 09:15:03 y 09:15:19.
+- Línea 6: un intento fallido contra deploy, a las 09:16:01.
+- Línea 7: autenticación por contraseña aceptada para ops desde la misma IP, a las 09:17:44.
+- Línea 8: apertura de sesión para ops a las 09:17:44.
+- Línea 9: entrada de sudo asociada a ops a las 09:19:07, con USER=root y COMMAND=/usr/bin/id. Esta línea no incluye la salida ni confirma que el comando haya terminado correctamente.
 
 ## Hipótesis e interpretación
+La secuencia es compatible con intentos de adivinación de contraseñas por SSH: desde una misma IP se probaron varias cuentas y luego se aceptó una autenticación para ops. Sin embargo, estos registros no permiten confirmar que el acceso fuera malicioso; también podría tratarse de actividad legítima con errores previos.
 
+La entrada de sudo posterior merece revisión para determinar si la actividad estaba autorizada. No demuestra por sí sola una escalada de privilegios mediante explotación ni que el comando se completara correctamente.
+
+Para evaluar estas hipótesis, se debe confirmar si la IP era conocida, si el titular de ops reconoce el acceso y si existía alguna tarea autorizada en ese horario.
 
 ## Cronología
+Fecha indicada: 14 de noviembre. Año y zona horaria no especificados en el registro.
 
 | Hora | Evento | Evidencia |
 | --- | --- | --- |
+| 09:14:02 | Intento fallido contra el usuario inválido admin desde 198.51.100.23. | auth.log, línea 2 |
+| 09:14:16 | Segundo intento fallido contra admin desde la misma IP. | auth.log, línea 3 |
+| 09:15:03 | Intento fallido contra ops desde la misma IP. | auth.log, línea 4 |
+| 09:15:19 | Segundo intento fallido contra ops desde la misma IP. | auth.log, línea 5 |
+| 09:16:01 | Intento fallido contra deploy desde la misma IP. | auth.log, línea 6 |
+| 09:17:44 | Autenticación SSH por contraseña aceptada para ops desde la misma IP. | auth.log, línea 7 |
+| 09:17:44 | Apertura de sesión para ops. | auth.log, línea 8 |
+| 09:19:07 | Entrada de sudo asociada a ops para ejecutar /usr/bin/id como root; resultado no incluido. | auth.log, línea 9 |
+
+
 
 ## Clasificación
+Actividad sospechosa de autenticación SSH: múltiples intentos fallidos contra distintas cuentas, seguidos de una autenticación exitosa desde la misma IP.
 
+Posible intento de adivinación de contraseñas con acceso posterior. Pendiente de validar si la actividad fue autorizada; compromiso no confirmado.
 
 ## Confianza
 
+Alta confianza en la secuencia observada dentro de los registros proporcionados: fallos de autenticación, acceso aceptado, apertura de sesión y entrada de sudo.
+
+Confianza media en la hipótesis de actividad maliciosa, por la relación temporal y la IP compartida. Falta contexto para confirmar un acceso no autorizado.
 
 ## Severidad y justificación
+Severidad provisional: media, sujeta a la matriz de prioridades del equipo.
 
+Los intentos fallidos fueron seguidos de un acceso exitoso desde la misma IP y actividad de sudo. Esto requiere investigación prioritaria, aunque todavía no se confirmó acceso no autorizado ni impacto. La severidad debe reevaluarse según la criticidad del host, los privilegios de la cuenta y la validación del acceso.
 
 ## Información faltante
 
+- Confirmar si la IP de origen pertenece a una conexión o servicio autorizado.
+- Consultar si el titular de ops reconoce el acceso y la actividad de sudo.
+- Verificar si había una tarea o cambio autorizado en ese horario.
+- Determinar la criticidad de srv-app-01 y los permisos de ops.
+- Revisar registros anteriores y posteriores, procesos y conexiones asociados a la sesión.
+- Confirmar año, zona horaria y sincronización del reloj del host.
 
 ## Escalamiento y siguiente paso
 
+Escalar a SOC L2 para investigar la secuencia de fallos, autenticación exitosa y actividad de sudo. Adjuntar este ticket y los registros originales, manteniendo las evidencias sin modificaciones.
+
+Solicitar la validación del acceso y ampliar la revisión a la actividad de la sesión. No cerrar la alerta como falso positivo hasta contar con evidencia que respalde esa decisión.
+
+Si se confirma acceso no autorizado o actividad maliciosa en curso, aplicar el procedimiento de contención del equipo con las autorizaciones correspondientes.
