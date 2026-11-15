@@ -1,0 +1,5 @@
+SIMULACIÓN — alerta del gateway, 2026-11-14T10:22:15Z
+ID: MAIL-002; destinatario: marina@empresa.example; mensaje: <sim-002-142208@boletin.example>
+Acción observada: entregado a carpeta de cuarentena; aviso visible al usuario.
+Detecciones: DMARC fail; Reply-To distinto de From; solicitud de credenciales y enlace desactivado.
+Telemetría de clic: no disponible. El fallo de autenticación es un indicador, no una prueba de phishing.

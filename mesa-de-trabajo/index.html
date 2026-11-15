@@ -33,12 +33,12 @@
   <header>
     <div class="eyebrow">Laboratorio local · SOC L1</div>
     <h1>Mesa de trabajo</h1>
-    <p class="intro">Un espacio de consulta para practicar el análisis inicial de un incidente. Abrí el caso, revisá los registros y documentá tu evaluación.</p>
-    <p class="notice"><strong>Datos simulados.</strong> Los eventos, identidades y host del caso son ficticios. La IP utilizada está reservada para documentación.</p>
+    <p class="intro">Tres prácticas de análisis SOC. Abrí un caso, revisá sus evidencias y documentá tu evaluación en el ticket local.</p>
+    <p class="notice"><strong>Datos simulados.</strong> Identidades, hosts y eventos ficticios; IP de documentación y dominios .example. La web es de consulta y no guarda progreso.</p>
   </header>
   <main>
     <section aria-labelledby="caso">
-      <h2 id="caso">Caso 001 · actividad SSH</h2>
+      <h2 id="caso">Caso 001 · actividad SSH · completado como práctica guiada</h2>
       <div class="grid">
         <div class="card">
           <h2>1. Abrí el ejercicio</h2>
@@ -52,10 +52,24 @@
         </div>
         <div class="card">
           <h2>3. Documentá el análisis</h2>
-          <p>Consultá el ticket y completalo con un editor local. Esta página no guarda cambios.</p>
+          <p>Consultá el ticket resuelto como ejemplo de análisis L1.</p>
           <a class="button" href="../casos/caso-001-ssh/ticket-consulta.html">Ver ticket</a>
           <a href="../plantillas/ticket-incidente-consulta.html">Ver plantilla reutilizable</a>
         </div>
+      </div>
+    </section>
+    <section aria-labelledby="caso2">
+      <h2 id="caso2">Caso 002 · correo sospechoso · L1 pendiente</h2>
+      <div class="grid">
+        <div class="card"><h2>Investigá</h2><p>Cabeceras, alerta, declaración, indicadores e impacto.</p><a class="button" href="../casos/caso-002-correo/instrucciones-consulta.html">Instrucciones</a><a class="button" href="../casos/caso-002-correo/ticket-consulta.html">Ticket pendiente</a></div>
+        <div class="card"><h2>Evidencias</h2><ul><li><a href="../casos/caso-002-correo/evidencias/mensaje-consulta.html">Correo .eml</a></li><li><a href="../casos/caso-002-correo/evidencias/alerta-consulta.html">Alerta</a></li><li><a href="../casos/caso-002-correo/evidencias/declaracion-consulta.html">Declaración</a></li></ul></div>
+      </div>
+    </section>
+    <section aria-labelledby="caso3">
+      <h2 id="caso3">Caso 003 · investigación SSH · L2 pendiente</h2>
+      <div class="grid">
+        <div class="card"><h2>Investigá</h2><p>Continuá el caso 001 con cronología UTC, alcance y contexto autorizado.</p><a class="button" href="../casos/caso-003-investigacion-ssh/instrucciones-consulta.html">Instrucciones</a><a class="button" href="../casos/caso-003-investigacion-ssh/ticket-consulta.html">Ticket pendiente</a></div>
+        <div class="card"><h2>Evidencias</h2><ul><li><a href="../casos/caso-003-investigacion-ssh/evidencias/autenticacion-consulta.html">Autenticación</a></li><li><a href="../casos/caso-003-investigacion-ssh/evidencias/sudo-consulta.html">Sudo</a></li><li><a href="../casos/caso-003-investigacion-ssh/evidencias/procesos-consulta.html">Procesos</a></li><li><a href="../casos/caso-003-investigacion-ssh/evidencias/conexiones-consulta.html">Conexiones</a></li><li><a href="../casos/caso-003-investigacion-ssh/evidencias/contexto-consulta.html">Contexto</a></li></ul></div>
       </div>
     </section>
     <section class="card" aria-labelledby="recursos">
@@ -70,6 +84,6 @@
       </ul>
     </section>
   </main>
-  <footer>El HTML es de consulta. Editá <code>ticket.md</code> con un editor local.</footer>
+  <footer>La web no guarda progreso. Editá el <code>ticket.md</code> de cada caso con un editor local.</footer>
 </body>
 </html>

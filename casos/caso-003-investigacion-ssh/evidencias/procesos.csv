@@ -1,0 +1,6 @@
+timestamp_utc,host,pid,ppid,user,session_id,command,observation
+2026-11-14T09:17:44Z,srv-app-01,18080,601,root,42,sshd: ops@pts/1,process-start
+2026-11-14T09:17:45Z,srv-app-01,18102,18080,ops,42,-bash,process-start
+2026-11-14T09:19:07Z,srv-app-01,18123,18102,root,42,sudo /usr/bin/id,process-start
+2026-11-14T09:19:07Z,srv-app-01,18124,18123,root,42,/usr/bin/id,process-start
+2026-11-14T09:20:11Z,srv-app-01,18140,18102,ops,42,cat /etc/hostname,process-start

@@ -1,0 +1,5 @@
+# SIMULADO. Fecha completa UTC. Horas del caso 001 normalizadas por supuesto, no por dato original.
+2026-11-14T09:17:44Z srv-app-01 sshd[18080]: session_id=42 user=ops src=198.51.100.23 src_port=50204 auth=password result=accepted
+2026-11-14T09:17:44Z srv-app-01 systemd-logind[601]: New session 42 of user ops.
+2026-11-14T09:19:07Z srv-app-01 sudo[18123]: session_id=42 user=ops target=root command=/usr/bin/id result=policy-allowed
+2026-11-14T09:24:20Z srv-app-01 sshd[18080]: session_id=42 user=ops result=disconnected

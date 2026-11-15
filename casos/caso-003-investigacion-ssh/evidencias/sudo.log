@@ -1,0 +1,4 @@
+# SIMULADO. Registro adicional UTC; no incluye salida del comando.
+2026-11-14T09:19:07Z srv-app-01 sudo[18123]: ops TTY=pts/1 PWD=/home/ops USER=root COMMAND=/usr/bin/id session_id=42
+2026-11-14T09:19:07Z srv-app-01 sudo[18123]: pam_unix(sudo:session): session opened for user root by ops(uid=1002)
+2026-11-14T09:19:08Z srv-app-01 sudo[18123]: pam_unix(sudo:session): session closed for user root

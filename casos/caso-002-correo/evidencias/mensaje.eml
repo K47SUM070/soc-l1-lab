@@ -1,0 +1,21 @@
+From: "Equipo de acceso" <acceso@portal.example>
+To: "Marina" <marina@empresa.example>
+Reply-To: "Mesa de revisión" <revision@soporte-revision.example>
+Return-Path: <envios@boletin.example>
+Date: Sat, 14 Nov 2026 10:22:08 +0000
+Message-ID: <sim-002-142208@boletin.example>
+Subject: Revision de acceso pendiente
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Received: from relay.boletin.example (relay.boletin.example [192.0.2.44]) by mx.empresa.example with ESMTPS id SIM002; Sat, 14 Nov 2026 10:22:14 +0000
+Received: from submit.boletin.example (submit.boletin.example [192.0.2.45]) by relay.boletin.example with ESMTPS id SIM001; Sat, 14 Nov 2026 10:22:10 +0000
+Authentication-Results: mx.empresa.example; spf=pass smtp.mailfrom=boletin.example; dkim=fail (signature verification failed) header.d=portal.example; dmarc=fail (p=quarantine) header.from=portal.example
+Received-SPF: pass (mx.empresa.example: envios@boletin.example permits 192.0.2.44) client-ip=192.0.2.44; envelope-from=envios@boletin.example
+DKIM-Signature: v=1; a=rsa-sha256; d=portal.example; s=simulado; h=from:to:subject:date; bh=SIMULATED-NONVALID; b=SIMULATED-NONVALID
+X-Exercise-Notice: SIMULADO; firma ficticia no verificable; URL desactivada
+
+Hola Marina:
+
+Hay una revisión de acceso pendiente. Consultá hxxps://verificacion-cuenta[.]example/revision antes de las 12:00 UTC e ingresá tus datos de acceso.
+
+Equipo de acceso
